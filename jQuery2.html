@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+  <style type="text/css">
+  	#box{
+  		width: 300px;
+  		height: 200px;
+  		background: red;
+  	}
+  </style>
+</head>
+<body>
+	<!-- <input type="button" value="显示" id="xs">  //1.html
+	<input type="button" value="隐藏" id="yc"> -->
+	<input type="button" value="显示/隐藏" id="xsyc">
+	<a href="#" id="link">超链接</a><button id="a">换超链接</button>
+	<div id="box"></div>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript">
+
+		//1.显示隐藏
+		// $('#xs').click(function(){
+  //   $('#box').show(2000,function(){ //，后边是回调函数
+  //   	alert('已经显示了');
+  //   });
+		// });
+		// $('#yc').click(function(){
+		// 	$('#box').hide(1000,function(){
+		// 		alert('已经隐藏了');
+		// 	});
+		// });
+		// 
+
+  //     //2.显示隐藏简化
+		// 	$('input').click(function(){
+		// 	$('#box').toggle(3000);
+		// });
+
+		//3.换超链接
+		$('a').click(function() {
+			$('#link').attr('href','http://www.baidu.com');  //attr() 设置或获取属性值 和css()方法类似，可以一次设置一个属性，也可以一次设置多个属性
+		});
+	</script>
+</body>
+</html>

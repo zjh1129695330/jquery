@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		/* #a{
+			background-color: green;
+			width: 100px;
+			height: 100px;
+		} */
+	</style>
+</head>
+<body>
+	<!-- <ul>
+		<li>list item 1</li>
+		<li>list item 1</li>
+		<li>list item 1</li>
+	</ul> -->
+	<div id="a"></div>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script>
+		//1. css(属性名,属性值) 设置一个属性
+		// var a=document.getElementById('a'); //js dom对象
+		// $(a); //jquery对象
+		// $(a).css("background-color","red");
+		// $('#a').css("background-color","red");
+		// $('#a').get(0).style.backgroundColor="red";
+
+    //2.css({属性名:属性值,属性名:属性值...}) 设置多个属性
+		// $('#a').css({
+		// 	width:"300px",
+		// 	height:"200px",
+		// 	backgroundColor:"red",
+		// 	border:"5px solid green",
+		// 	margin:"50px",
+		// })
+		 
+		//3. 连接click时间条件 必须是一个空间内
+		// $('#a').css({
+		// 	width:"300px",
+		// 	height:"200px",
+		// 	backgroundColor:"red",
+		// 	border:"5px solid green",
+		// 	margin:"50px"
+		// }).click(function(){
+		// 	$(this).text($(this).text()+'some text');
+		// }).mouseover(function(){
+		// 	$(this).css('background-color','blue');
+		// }).mouseout(function(){
+		// 	$(this).css('background-color','red');
+		// })
+		
+		//滑动一次触动
+		$('#a').css({
+			width:"300px",
+			height:"200px",
+			backgroundColor:"red",
+			border:"5px solid green",
+			margin:"50px"
+		}).click(function(){
+			$(this).text($(this).text()+'some text');
+		}).one('mouseover',function(){
+			$(this).css('background-color','blue');
+		}).one('mouseout',function(){
+			$(this).css('background-color','red');
+		});
+	</script>
+</body>
+</html>

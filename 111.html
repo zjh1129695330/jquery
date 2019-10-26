@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery add/remove ul li</title>
+ 
+<style type="text/css">
+    #nav{width:1000px;height:450px;border-top:#060 2px solid;margin-top:10px;border-bottom:#060 2px solid;background-color:#690;margin-left:50px;}
+    #nav ul{list-style:none;line-height:40px;}
+    #nav li{display:block;float:left;padding:15px;line-height:50px;}
+    #nav a{display:block;color:#fff;text-decoration:none;padding:0px;}
+    #nav a:hover{background-color:#060;}
+    input {margin-top:10px;margin-left:50px;width:100px;height:50px;font-size:15px;}
+</style>
+ 
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+//按钮的点击事件，每次点击的时候动态的创建一个  li对象，jquery直接通过 ul对象的id，使用 append 方法 动态的把li添加到ul里面
+    $("#addButton").bind("click",function(){ 
+        var google = Math.random();
+        var msg = "<li><a href='javascript:void(1)'>删我</a>" + google + "</li>";
+        $("#colist").append(msg);
+        //每次添加万一个元素后，都会给改li绑定移除事件
+        bindListener();
+    });
+    //
+    function bindListener(){
+        //给所有的 ul li重新绑定移除事件
+        $("#colist li a").unbind().click(function(){
+          //直接通过.remove() 方法移除掉li元素,页面自动就会刷新
+          $(this).parent().remove();
+        });
+    }
+    //jquery 检索ul li的所有元素
+    $("#collect").click(function(){
+        var data = "";
+        $("#nav").find("ul li span").each(function(index,value){
+            data += $(this).text() + "|";
+        })
+        alert(data);
+    })
+})
+</script>
+ 
+</head>
+ 
+<body>
+ 
+    <div id="nav">
+        <ul id="colist">
+        </ul>
+    </div>
+ 
+    <input type="button" value="通过jquery动态添加一个心的li" id="addButton" />
+    <input type="button" value="查询所有的li信息" id="collect" />
+ 
+</body>
+</html>
